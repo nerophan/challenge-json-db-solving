@@ -12,6 +12,9 @@ app.use(bodyParser.json())
 
 app.get('/health', api.getHealth)
 
+const routes = require('./routes/students')
+app.use('/', routes)
+
 app.use(middleware.handleError)
 app.use(middleware.notFound)
 
